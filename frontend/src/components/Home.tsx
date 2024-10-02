@@ -1,55 +1,70 @@
 import { useContext } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import { AuthContext } from '../AuthContext';
 
 const Home = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <Box 
+    <Container
+      maxWidth="md"
       sx={{
-        height: '90vh',
-        overflowY: 'auto',
-        p: 3,
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         bgcolor: 'background.default',
         color: 'text.primary',
+        textAlign: 'center',
+        p: 3,
       }}
     >
-      <Box sx={{ mb: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          Welcome, {user?.username}!
+      <Box>
+        <Typography variant="h2" gutterBottom>
+          Welcome to Chattini, {user?.username}!
         </Typography>
+
+        <Typography variant="h5" sx={{ mb: 4 }}>
+          Connect and communicate with other users effortlessly.
+        </Typography>
+        <Box sx={{ mt: 4 }}>
+          <Typography variant="h4" gutterBottom>
+            Features
+          </Typography>
+          <Box sx={{ textAlign: 'left', mt: 2 }}>
+            <Typography variant="h6">• Messaging</Typography>
+            <Typography paragraph>
+              Send and receive messages with other users in real-time.
+            </Typography>
+
+            <Typography variant="h6">• Notifications</Typography>
+            <Typography paragraph>
+              Get notified when you receive new messages or important updates.
+            </Typography>
+
+            <Typography variant="h6">• Password Reset</Typography>
+            <Typography paragraph>
+              Forgot your password? Reset it securely with our password reset feature.
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box sx={{ mt: 4 }}>
+          <Typography variant="h4" gutterBottom>
+            About Chattini
+          </Typography>
+          <Typography paragraph>
+            Chattini is a user-friendly platform designed to facilitate seamless communication and user management. Whether you're connecting with friends, colleagues, or new acquaintances, Chattini provides the tools you need to stay connected.
+          </Typography>
+        </Box>
+
+        <Box sx={{ mt: 5 }}>
+          <Typography variant="caption" color="text.secondary">
+            &copy; {new Date().getFullYear()} Chattini. All rights reserved.
+          </Typography>
+        </Box>
       </Box>
-
-      <Box sx={{ mt: 2 }}>
-        <Typography variant="h5" gutterBottom>
-          Documentation
-        </Typography>
-
-        <Typography paragraph>
-          This is a documentation section where you can provide information about the application, its features, and other relevant details.
-        </Typography>
-
-        <Typography paragraph>
-          You can divide your content into multiple sections, each with headers and text. Use this space to inform users about the purpose of the app, its functionality, and any important notes they need to know.
-        </Typography>
-
-        <Typography paragraph>
-          Example of what to include in the documentation:
-        </Typography>
-
-        <ul>
-          <li>How to navigate the application</li>
-          <li>Security practices and how to manage account settings</li>
-          <li>Steps for troubleshooting common issues</li>
-          <li>Key features and their usage</li>
-        </ul>
-
-        <Typography paragraph>
-          Add as much information as you need, and ensure that everything is clear and easy to follow. You can also style this section differently depending on the type of content you want to present.
-        </Typography>
-      </Box>
-    </Box>
+    </Container>
   );
 };
 
