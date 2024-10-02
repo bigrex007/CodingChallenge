@@ -1,4 +1,6 @@
+--------------
 Code Challenge
+------------
 CHATTINI APP
 
 --- Proyect Architecture ---
@@ -84,7 +86,9 @@ Notification Sender Service:
 
 Once this is running you can access the app from http://localhost:5173/, this should automatically redirect to http://localhost:5173/login in oder to signup.
 
-App Testing and Running
+
+
+--- App Testing and Running
 
 Once in the Login page, if you already have an account you can go ahead and log into it. Additionally, you can create a new account if you wish, it will ask you for a username, email and password. All new users have 'user' role and permissions.
 
