@@ -1,4 +1,3 @@
---------------
 Code Challenge
 ------------
 CHATTINI APP
